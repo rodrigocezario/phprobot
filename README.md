@@ -47,7 +47,8 @@ Cabe dizer que outras implementações de comandos poderão ser adicionadas ao p
 
 Algumas configurações são necessários para Raspberry Pi para o funcionamento adequado ao acesso a porta Serial. A comunicação entre Raspberry e Arduíno foi realizada através de um protocolo padrão de comunicação, o UART (Universal Synchronous Receiver/Transmitter). A conexão entre o Raspberry Pi e o Arduino pode ser feita através da GPIO, utilizando as portas RX e TX, ou utilizando a própria porta USB dos dispositivos.
 
-Um problema recorrente na integração destes dispositivos trata-se do Reset do Arduino a cada vez que o Raspberry Pi iniciar uma comunicação. Uma solução relatada na rede recomenda a adição de um capacitor de 10uF entre os sinais GND e Reset do Arduino para evitar o reinicio. No entanto, optou-se por outra solução acidentalmente encontrada. Observou-se que quando utilizado o software Minicom no Raspberry Pi, o Arduino não reiniciava a cada comando via serial. O comando utilizado para instalar o Minicom no Raspberry Pi foi:
+Um problema recorrente na integração destes dispositivos trata-se do Reset do Arduino a cada vez que o Raspberry Pi iniciar uma comunicação. Uma solução relatada na rede, recomenda a adição de um capacitor de 10uF entre os sinais GND e Reset do Arduino para evitar o reinício. No entanto, optou-se por outra solução acidentalmente encontrada. :)
+Observou-se que quando utilizado (inicializado) o software Minicom no Raspberry Pi, o Arduino não reiniciava a cada comando via serial enviado pelo PHP. De alguma forma o Minicom faz como que o Arduino não seja reicializado a cada comando via serial. O comando utilizado para instalar o Minicom no Raspberry Pi foi:
 
 ```sh
 sudo apt-get install minicom
@@ -59,7 +60,8 @@ Após este passo, optou-se em adicionar o comando do Minicom no arquivo rc.local
 sudo minicom -D /dev/ttyACM0 -b 9600
 ```
 
-Além disso, foi necessário atribuir permissão a porta usb do Raspberry Pi.
+Talvez esta não seja a solução mais adequada. Porém, resolveu o problema de reinício do Arduino sem a necessidade de adicionar qualquer componente. :)
+Além disso, foi necessário atribuir permissão a porta usb e pasta do servidor web do Raspberry Pi.
 
 ```sh
 sudo chown pi:pi /dev/ttyACM0
@@ -69,7 +71,6 @@ sudo adduser pi www-data
 sudo chmod 777 /dev/ttyACM0
 ```
 
-
 ## Contribuições
 
-Todos são bem-vindos a contribuir com este projeto. :)
+Todos são bem-vindos a contribuir com este projeto. Sinta-se a vontade em enviar suas sugestões e crítias para o e-mail [mailto](mailto:rodrigocezario@msn.com). :)
