@@ -73,4 +73,4 @@ sudo chmod 777 /dev/ttyACM0
 
 ## Contribuições
 
-Todos são bem-vindos a contribuir com este projeto. Sinta-se a vontade em enviar suas sugestões e críticas para o e-mail [mailto](mailto:rodrigocezario@msn.com)<rodrigocezario@msn.com>. :)
+Todos são bem-vindos a contribuir com este projeto. Sinta-se a vontade em enviar suas sugestões e críticas para o e-mail (mailto:rodrigocezario@msn.com)<rodrigocezario@msn.com>. :)
