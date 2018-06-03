@@ -9,16 +9,24 @@
 /**
  * Description of ComandoMotor
  *
- * @author rodrigocezario
+ * @author Rodrigo Cezario da Silva <rodrigocezario@msn.com>
+ * @copyright  2018 Rodrigo Cezario
+ * @version V1.1
+ * @link https://github.com/rodrigocezario/phprobot PHP Robot
  */
 
 include "PhpSerial.php";
+/* 
+ * A porta de comunicação serial dever ser configurada 
+ * no arquivo configuracoes.php
+ */
+include 'configuracoes.php';
 
 class ComandoMotor implements ICommand {
     
     public function executa($comando) {
         $serial = new PhpSerial;
-        $serial->deviceSet("/dev/ttyACM0");
+        $serial->deviceSet(PORTA); //serial port ver SO
         $serial->confBaudRate(9600);
         $serial->deviceOpen('w+');
         $serial->confParity("none");

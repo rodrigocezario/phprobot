@@ -9,7 +9,10 @@
 /**
  * Description of Command
  *
- * @author rodrigocezario
+ * @author Rodrigo Cezario da Silva <rodrigocezario@msn.com>
+ * @copyright  2018 Rodrigo Cezario
+ * @version V1.1
+ * @link https://github.com/rodrigocezario/phprobot PHP Robot
  */
 interface ICommand {
     
