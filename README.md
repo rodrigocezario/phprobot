@@ -39,8 +39,11 @@ COM2
 ## Firmwares
 
 Na versão atual, o projeto conta com duas versões de firmwares. O firmware phprobot_firmware [Firmware para Driver Motor Ponte H Shield L293D ](/phprobot_firmware/phprobot_firmware.ino) deve ser utilizado para controlar até 4 motores. Para tanto, será necessário junto ao hardware um Motor Shield L293D Driver Ponte H para Arduino, retratado na figura a seguir.
+
 ![Motor Shield L293D](img/l293d.jpg?raw=true "Driver Motor Ponte H Shield L293D")
+
 Outra opção, seria a utilização de um Driver Motor Ponte H L298n, apresentado na figura a seguir. Para utilizar a Ponte H L298n, é necessário o carregamento do firmware phprobot_firmware_l298n [Firmware para Driver Motor Ponte H L298n](/phprobot_firmware_l298n/phprobot_firmware_l298n.ino). Vale lembrar que o Driver Motor Ponte H L298N presta suporte até 2 motores.
+
 ![Driver Motor Ponte H L298N](img/l298n.jpg?raw=true "Driver Motor Ponte H L298N")
 
 ## Definição dos Motores
