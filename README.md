@@ -7,7 +7,7 @@ Esta ferramenta apresenta como diferencial a utilização da plataforma de proto
 ## Modelo de Classes do projeto
 A figura a seguir ilustra o modelo de classes do projeto.
 ![Modelo de Classes do projeto](img/classes.png?raw=true "Modelo de Classes do projeto")
-Para a utilização da ferramenta, será necessário da implementação da especialização da classe Carrinho. Os valores que devem ser passados como parâmetro nas operações previstas pela interface ICarrinho ainda não funcionam. Para que esses valores possam fazer alguma diferença, falta estudar uma forma de definir como será tratadas essas unidades. Para tanto, será necessário refatorar os firmwares [firmware neste projeto](firmware/phprobot_firmware/phprobot_firmware.ino) e [firmware neste projeto](firmware/phprobot_firmware_l298n/phprobot_firmware_l298n.ino).
+Para a utilização da ferramenta, será necessário da implementação da especialização da classe Carrinho. Os valores que devem ser passados como parâmetro nas operações previstas pela interface ICarrinho ainda não funcionam. Para que esses valores possam fazer alguma diferença, falta estudar uma forma de definir como será tratadas essas unidades. Para tanto, será necessário refatorar os firmwares [Firmware para Driver Motor Ponte H Shield L293D](firmware/phprobot_firmware/phprobot_firmware.ino) e [Firmware para Driver Motor Ponte H L298n](firmware/phprobot_firmware_l298n/phprobot_firmware_l298n.ino).
 
 ## Configuração da porta USB
 
