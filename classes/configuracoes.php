@@ -24,5 +24,16 @@
 
 define("PORTA", "/dev/ttyACM0");
 
+/*
+ * 
+ * SO = WIN, LINUX, OSX
+ * 
+ */
+
+define("SO","LINUX");
+
+define("BAUDRATE",9600); //taxa de transferencia na porta
+
+
 ?>
 

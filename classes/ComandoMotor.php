@@ -14,28 +14,39 @@
  * @version V1.1
  * @link https://github.com/rodrigocezario/phprobot PHP Robot
  */
-
 include "PhpSerial.php";
-/* 
+/*
  * A porta de comunicação serial dever ser configurada 
  * no arquivo configuracoes.php
  */
 include 'configuracoes.php';
 
 class ComandoMotor implements ICommand {
-    
+
     public function executa($comando) {
-        $serial = new PhpSerial;
-        $serial->deviceSet(PORTA); //serial port ver SO
-        $serial->confBaudRate(9600);
-        $serial->deviceOpen('w+');
-        $serial->confParity("none");
-        $serial->confCharacterLength(8);
-        $serial->confStopBits(1);
-        $serial->deviceOpen();
-        $serial->sendMessage($comando);
-        $read = $serial->readPort();
-        $serial->deviceClose();
+        $read = 0;
+        if (SO == "WIN") {
+            $port = PORTA;
+            $baudrate = BAUDRATE;
+            exec("MODE $port BAUD=$baudrate PARITY=n DATA=8 XON=on STOP=1");
+            $fp = fopen($port, 'c+');
+            fwrite($fp, $comando);
+            $read = fread($fp,128);  
+            fclose($fp);
+        } else {
+            $serial = new PhpSerial; //tem muito bug e não funcionada direito no windows
+            
+            $serial->deviceSet(PORTA); //serial port ver SO
+            $serial->confBaudRate(BAUDRATE);
+            $serial->deviceOpen('w+');
+            $serial->confParity("none");
+            $serial->confCharacterLength(8);
+            $serial->confStopBits(1);
+            $serial->deviceOpen();
+            $serial->sendMessage($comando);
+            $read = $serial->readPort();
+            $serial->deviceClose();
+        }
         return $read;
     }
 
