@@ -31,7 +31,7 @@ class ComandoMotor implements ICommand {
             exec("MODE $port BAUD=$baudrate PARITY=n DATA=8 XON=on STOP=1");
             $fp = fopen($port, 'c+');
             fwrite($fp, $comando);
-            $read = fread($fp,128);  
+            //$read = fread($fp,128);  //bloqueia a porta
             fclose($fp);
         } else {
             $serial = new PhpSerial; //tem muito bug e não funcionada direito no windows
