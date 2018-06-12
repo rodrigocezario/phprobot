@@ -17,12 +17,7 @@ and open the template in the editor.
             <input type="submit" value="Parar" name="parar">
         </form>
         <?php
-        include_once '../classes/MotorPosicao.php';
-        include_once '../classes/ICommand.php';
-        include_once '../classes/ComandoMotor.php';
-        include_once '../classes/Motor.php';
-        include_once '../classes/ICarrinho.php';
-        include_once '../classes/Carrinho.php';
+        include_once '../autoloader.php';
         include_once 'CarrinhoTeste.php';
         
         $command = new ComandoMotor;
@@ -39,6 +34,8 @@ and open the template in the editor.
         $car->addMotor($motor2);
         $car->addMotor($motor3);
         $car->addMotor($motor4);
+        
+        
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(isset($_POST["frente"])) {
                 echo "Andar para frente</br>";
